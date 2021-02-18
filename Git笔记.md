@@ -181,3 +181,113 @@ bug紧急修复：创建一个新的分支 然后合并到主分支去
 master（正式）
 
 dev（开发）
+
+***********
+
+### 第五阶段
+
+```
+1、给远程仓库起别名
+	git remote add origin 远程仓库地址
+2、向远程推送代码
+	git push -u origin 分支名
+3、克隆远程仓库的代码
+	git clone 远程仓库地址（内部已实现git remote add origin 远程仓库地址）
+4、切换分支
+	git checkout 分支名
+```
+
+*******
+
+   在家里上传代码
+
+```
+1.给远程仓库起别名
+	git remote add origin 远程仓库地址
+2.向远程推送代码
+	git push -u origin 分支
+```
+
+到公司新电脑上第一次获取代码
+
+```
+1.克隆远程仓库代码
+	git clone 远程仓库地址（内部已实现git remote add origin 远程仓库地址）
+2.切换分支
+	git checkout 分支
+```
+
+在公司进行开发
+
+```
+1.切换到dev分支进行开发
+	git checkout dev
+2.把master分支合并到dev【仅一次】
+	git merge master 
+3.修改代码
+4.提交代码
+	git add .
+	git commit -m 'xx'
+	git push origin dev
+```
+
+回到家中继续写代码
+
+```
+1.切换到dev分支进行开发
+	git checkout dev
+2.拉代码
+	git pull origin dev
+3.继续开发
+4.提交代码
+	git add 
+	git commit -m 'xx'
+	git push origin dev
+```
+
+在公司继续开发
+
+```
+1.切换到dev分支进行开发
+	git checkout dev
+2.拉代码
+	git pull origin dev
+3.继续开发
+4.提交代码
+	git add
+	git commit -m 'xx'
+	git push origin dev
+```
+
+开发完毕，要上线
+
+```
+1.将dev分支合并到master，进行上线
+	git checkout master
+	git merge dev
+	git push origin mater
+2.把dev分支也推送到远程
+	git checkout dev
+	git merge master
+	git push origin dev
+```
+
+```
+git pull origin dev
+等同于
+git fetch origin dev
+git merge origin/dev
+```
+
+**********
+
+##### rebase(变基)
+
+使git记录变简洁 
+
+- 第一种应用场景
+  - 多个记录——>一个记录
+    - 注意：合并纪录时不要和已push到仓库的
+- 第二种应用场景
+- 第三种应用场景
+
