@@ -287,7 +287,77 @@ git merge origin/dev
 
 - 第一种应用场景
   - 多个记录——>一个记录
-    - 注意：合并纪录时不要和已push到仓库的
+    
+    ```
+    git rebase -i HEAD~3
+    git rebase -i 版本号
+    ```
+    
+    - 注意：合并纪录时不要和已push到仓库的合并，合并的是那些没有提交到仓库的提交记录
 - 第二种应用场景
 - 第三种应用场景
 
+***
+
+####  快速解决冲突
+
+1.安装Beyond Compare
+
+2.在git中配置
+
+```
+git config --local merge.tool bc3
+git config --local mergetool.path 'xxx/xxx/xxx'
+git config --local mergetool.keepBackup false
+```
+
+3.应用Beyond Compare 解决冲突
+
+```
+git mergetool
+```
+
+****
+
+#### 总结
+
+- 添加远程连接
+
+  ```
+  git remote add origin 地址
+  ```
+
+- 推送代码
+
+  ```
+  git push origin dev(推送到的分支)
+  ```
+
+- 下载代码
+
+  ```
+  git clone 地址 （所有分支都下载了）
+  ```
+
+- 拉去代码（更新本地代码）
+
+  ```
+  git pull origin dev
+  等价于
+  git fetch origin dev
+  git merge origin/dev
+  ```
+
+- 保持代码提交整洁（变基）
+
+  ```
+  git rebase 分支
+  ```
+
+- 记录的图形展示
+
+  ```
+  git log --graph --pretty=format:"%h %s"
+  ```
+
+  
