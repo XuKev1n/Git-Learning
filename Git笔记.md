@@ -360,4 +360,71 @@ git mergetool
   git log --graph --pretty=format:"%h %s"
   ```
 
+  ******
+
+  ### 第六阶段：多人协同开发
+
   
+
+  ### 补充知识
+
+  配置文件
+
+  ```
+  项目配置文件
+  项目/.git/config
+  git config --local user.name 'Kevin'
+  git config --local user.email 'Kevin@xx.com'
+  全局配置文件
+  ~/.gitconfig
+  git config --global user.name 'Kevin'
+  git config --global user.email 'Kevin@xx.com'
+  系统配置文件
+  /etc/.gitconfig
+  git config --system user.name 'Kevin'
+  git config --system user.email 'Kevin@xx.com'
+  注意：root权限
+  ```
+
+  git免密登录
+
+- URL中体现
+
+  ```
+  原来的地址https://github.com/XuKev1n/Git-Learning.git
+  修改的地址：https://用户名：密码@github.com/XuKev1n/Git-Learning.git
+  
+  git remote add origin https://用户名：密码@github.com/XuKev1n/Git-Learning.git
+  git push origin master
+  ```
+
+- SSH
+
+- git自动管理凭证
+
+  
+
+*************
+
+.gitignore文件
+
+git忽略文件
+
+让git不再管理当前目录下的某些文件。
+
+```
+a.h
+*.h
+!b.h
+files/
+*.py[c|a|d]
+```
+
+更多参考：[github/gitignore: A collection of useful .gitignore templates](https://github.com/github/gitignore)
+
+******
+
+github任务管理相关
+
+- issues 文档以及任务管理
+- wiki 项目文档
